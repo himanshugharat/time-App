@@ -97,103 +97,26 @@ const Mystack = () => {
   if (!loading) {
     return <Loading></Loading>;
   } else {
-    // if (localValue.companyName == 'NXTDigital') {
-    //   return (
-    //     <SafeAreaProvider>
-    //       <Stack.Navigator>
-    //         {localValue ? (
-    //           <>
-    //             {/* <Stack.Screen name="top" component={AllData} />
-    //           <Stack.Screen name="Antenna" component={Antenna} />
-    //           <Stack.Screen name="Installstb" component={Installstb} />
-    //           <Stack.Screen name="Detail" component={Map} />
-    //           <Stack.Screen
-    //             name="Technical/Complain"
-    //             component={TechnicalData}
-    //           /> */}
-    //             <Stack.Screen
-    //               name="CloudFOS"
-    //               component={Home}
-    //               options={({navigation, route}) => ({
-    //                 // headerTitle: 'data',
-    //                 headerRight: () => (
-    //                   <Icon
-    //                     name="user-circle-o"
-    //                     type="font-awesome"
-    //                     color="#f50"
-    //                     onPress={() => {
-    //                       navigation.push('Profile');
-    //                     }}
-    //                     iconStyle={{paddingRight: 20}}
-    //                   />
-    //                 ),
-    //               })}
-    //             />
-    //             <Stack.Screen name="main" component={Board} />
-    //             <Stack.Screen name="signature" component={Mainsignature} />
-    //             <Stack.Screen name="barcode" component={Barcode} />
-    //             <Stack.Screen name="Rating" component={RatingModel} />
-    //             <Stack.Screen name="UploadImage" component={ImagePickerModel} />
-    //             <Stack.Screen name="UploadVideo" component={VideoPickerModel} />
-    //             <Stack.Screen
-    //               name="Task Summary"
-    //               component={AllTask}
-    //               options={({navigation, route}) => ({
-    //                 // headerTitle: 'data',
-    //                 headerLeft: () => (
-    //                   <Icon
-    //                     name="home"
-    //                     type="font-awesome"
-    //                     color="#f50"
-    //                     onPress={() => {
-    //                       navigation.navigate('CloudFOS');
-    //                     }}
-    //                     iconStyle={{paddingLeft: 20}}
-    //                   />
-    //                 ),
-    //               })}
-    //             />
-    //             <Stack.Screen name="Technical" component={Technical} />
-    //             <Stack.Screen name="Sales" component={SalesForm} />
-    //             <Stack.Screen name="Database" component={AllCollection} />
-    //             <Stack.Screen name="Profile" component={Profile} />
-    //             <Stack.Screen name="Task Detail" component={DetailTask} />
-    //             <Stack.Screen name="Task Form" component={FillForm} />
-    //             <Stack.Screen name="Task Report" component={ReportTask} />
-    //             <Stack.Screen name="task" component={Task} />
-    //             <Stack.Screen name="DoneDetail" component={DoneDetail} />
-    //           </>
-    //         ) : (
-    //           <Stack.Screen name="login" component={Usersignin} />
-    //         )}
-    //         {/* <Stack.Screen name="home" component={Home} />
-    //   <Stack.Screen name="GenericTaskDetails" component={GenericTaskDetails} />
-    //   <Stack.Screen name="task" component={Task} /> */}
-    //       </Stack.Navigator>
-    //     </SafeAreaProvider>
-    //   );
-    // } else {
-    return (
-      <SafeAreaProvider>
-        <Stack.Navigator>
-          {localValue ? (
-            <>
-              {/* <Stack.Screen
-                name="top"
-                component={AllData}
-                options={({navigation, route}) => ({
-                  // headerTitle: 'data',
-                  headerRight: () => (
-                    <View style={{display: 'flex', flexDirection: 'row'}}>
-                      <Icon
-                        name="tv"
-                        type="font-awesome"
-                        color="#f50"
-                        onPress={() => {
-                          navigation.push('video', {navigation: navigation});
-                        }}
-                        iconStyle={{paddingRight: 20}}
-                      />
+    if (localValue?.companyName == 'NXTDigital') {
+      return (
+        <SafeAreaProvider>
+          <Stack.Navigator>
+            {localValue && localValue ? (
+              <>
+                {/* <Stack.Screen name="top" component={AllData} />
+              <Stack.Screen name="Antenna" component={Antenna} />
+              <Stack.Screen name="Installstb" component={Installstb} />
+              <Stack.Screen name="Detail" component={Map} />
+              <Stack.Screen
+                name="Technical/Complain"
+                component={TechnicalData}
+              /> */}
+                <Stack.Screen
+                  name="CloudFOS"
+                  component={Home}
+                  options={({navigation, route}) => ({
+                    // headerTitle: 'data',
+                    headerRight: () => (
                       <Icon
                         name="user-circle-o"
                         type="font-awesome"
@@ -203,84 +126,161 @@ const Mystack = () => {
                         }}
                         iconStyle={{paddingRight: 20}}
                       />
-                    </View>
-                  ),
-                })}
-              />
-              <Stack.Screen name="Installation Antenna" component={Antenna} />
-              <Stack.Screen name="Installation STB" component={Installstb} />
-              <Stack.Screen name="Detail" component={Map} />
-              <Stack.Screen name="Fault Repair" component={TechnicalData} />
-              <Stack.Screen name="Demo" component={Demo} />
-              <Stack.Screen name="video" component={LearningVideo} /> */}
-              {/* <Stack.Screen name="video" component={Learning} /> */}
-              <Stack.Screen
-                name="CloudFOS"
-                component={Home}
-                options={({navigation, route}) => ({
-                  // headerTitle: 'data',
-                  headerRight: () => (
-                    <Icon
-                      name="user-circle-o"
-                      type="font-awesome"
-                      color="#f50"
-                      onPress={() => {
-                        navigation.push('Profile');
-                      }}
-                      iconStyle={{paddingRight: 20}}
-                    />
-                  ),
-                })}
-              />
-              <Stack.Screen name="main" component={Board} />
-              <Stack.Screen
-                name="Collectionscreen"
-                component={Collectionscreen}
-              />
-              <Stack.Screen name="DCCollection" component={DCCollection} />
-              <Stack.Screen name="signature" component={Mainsignature} />
-              <Stack.Screen name="barcode" component={Barcode} />
-              <Stack.Screen name="Rating" component={RatingModel} />
-              <Stack.Screen name="UploadImage" component={ImagePickerModel} />
-              <Stack.Screen name="UploadVideo" component={VideoPickerModel} />
-              <Stack.Screen
-                name="Task Summary"
-                component={AllTask}
-                options={({navigation, route}) => ({
-                  // headerTitle: 'data',
-                  headerLeft: () => (
-                    <Icon
-                      name="home"
-                      type="font-awesome"
-                      color="#f50"
-                      onPress={() => {
-                        navigation.navigate('CloudFOS');
-                      }}
-                      iconStyle={{paddingLeft: 20}}
-                    />
-                  ),
-                })}
-              />
-              <Stack.Screen name="Technical" component={Technical} />
-              <Stack.Screen name="Sales" component={SalesForm} />
-              <Stack.Screen name="Database" component={AllCollection} />
-              <Stack.Screen name="Profile" component={Profile} />
-              <Stack.Screen name="Task Detail" component={DetailTask} />
-              <Stack.Screen name="Task Form" component={FillForm} />
-              <Stack.Screen name="Task Report" component={ReportTask} />
-              <Stack.Screen name="task" component={Task} />
-              <Stack.Screen name="DoneDetail" component={DoneDetail} />
-            </>
-          ) : (
-            <Stack.Screen name="login" component={Usersignin} />
-          )}
-          {/* <Stack.Screen name="home" component={Home} />
+                    ),
+                  })}
+                />
+                <Stack.Screen name="main" component={Board} />
+                <Stack.Screen name="signature" component={Mainsignature} />
+                <Stack.Screen name="barcode" component={Barcode} />
+                <Stack.Screen name="Rating" component={RatingModel} />
+                <Stack.Screen name="UploadImage" component={ImagePickerModel} />
+                <Stack.Screen name="UploadVideo" component={VideoPickerModel} />
+                <Stack.Screen
+                  name="Task Summary"
+                  component={AllTask}
+                  options={({navigation, route}) => ({
+                    // headerTitle: 'data',
+                    headerLeft: () => (
+                      <Icon
+                        name="home"
+                        type="font-awesome"
+                        color="#f50"
+                        onPress={() => {
+                          navigation.navigate('CloudFOS');
+                        }}
+                        iconStyle={{paddingLeft: 20}}
+                      />
+                    ),
+                  })}
+                />
+                <Stack.Screen name="Technical" component={Technical} />
+                <Stack.Screen name="Sales" component={SalesForm} />
+                <Stack.Screen name="Database" component={AllCollection} />
+                <Stack.Screen name="Profile" component={Profile} />
+                <Stack.Screen name="Task Detail" component={DetailTask} />
+                <Stack.Screen name="Task Form" component={FillForm} />
+                <Stack.Screen name="Task Report" component={ReportTask} />
+                <Stack.Screen name="task" component={Task} />
+                <Stack.Screen name="DoneDetail" component={DoneDetail} />
+              </>
+            ) : (
+              <Stack.Screen name="login" component={Usersignin} />
+            )}
+            {/* <Stack.Screen name="home" component={Home} />
+      <Stack.Screen name="GenericTaskDetails" component={GenericTaskDetails} />
+      <Stack.Screen name="task" component={Task} /> */}
+          </Stack.Navigator>
+        </SafeAreaProvider>
+      );
+    } else {
+      return (
+        <SafeAreaProvider>
+          <Stack.Navigator>
+            {localValue ? (
+              <>
+                <Stack.Screen
+                  name="top"
+                  component={AllData}
+                  options={({navigation, route}) => ({
+                    // headerTitle: 'data',
+                    headerRight: () => (
+                      <View style={{display: 'flex', flexDirection: 'row'}}>
+                        <Icon
+                          name="tv"
+                          type="font-awesome"
+                          color="#f50"
+                          onPress={() => {
+                            navigation.push('video', {navigation: navigation});
+                          }}
+                          iconStyle={{paddingRight: 20}}
+                        />
+                        <Icon
+                          name="user-circle-o"
+                          type="font-awesome"
+                          color="#f50"
+                          onPress={() => {
+                            navigation.push('Profile');
+                          }}
+                          iconStyle={{paddingRight: 20}}
+                        />
+                      </View>
+                    ),
+                  })}
+                />
+                <Stack.Screen name="Installation Antenna" component={Antenna} />
+                <Stack.Screen name="Installation STB" component={Installstb} />
+                <Stack.Screen name="Detail" component={Map} />
+                <Stack.Screen name="Fault Repair" component={TechnicalData} />
+                <Stack.Screen name="Demo" component={Demo} />
+                <Stack.Screen name="video" component={LearningVideo} />
+                {/* <Stack.Screen name="video" component={Learning} /> */}
+                <Stack.Screen
+                  name="CloudFOS"
+                  component={Home}
+                  options={({navigation, route}) => ({
+                    // headerTitle: 'data',
+                    headerRight: () => (
+                      <Icon
+                        name="user-circle-o"
+                        type="font-awesome"
+                        color="#f50"
+                        onPress={() => {
+                          navigation.push('Profile');
+                        }}
+                        iconStyle={{paddingRight: 20}}
+                      />
+                    ),
+                  })}
+                />
+                <Stack.Screen name="main" component={Board} />
+                <Stack.Screen
+                  name="Collectionscreen"
+                  component={Collectionscreen}
+                />
+                <Stack.Screen name="DCCollection" component={DCCollection} />
+                <Stack.Screen name="signature" component={Mainsignature} />
+                <Stack.Screen name="barcode" component={Barcode} />
+                <Stack.Screen name="Rating" component={RatingModel} />
+                <Stack.Screen name="UploadImage" component={ImagePickerModel} />
+                <Stack.Screen name="UploadVideo" component={VideoPickerModel} />
+                <Stack.Screen
+                  name="Task Summary"
+                  component={AllTask}
+                  options={({navigation, route}) => ({
+                    // headerTitle: 'data',
+                    headerLeft: () => (
+                      <Icon
+                        name="home"
+                        type="font-awesome"
+                        color="#f50"
+                        onPress={() => {
+                          navigation.navigate('CloudFOS');
+                        }}
+                        iconStyle={{paddingLeft: 20}}
+                      />
+                    ),
+                  })}
+                />
+                <Stack.Screen name="Technical" component={Technical} />
+                <Stack.Screen name="Sales" component={SalesForm} />
+                <Stack.Screen name="Database" component={AllCollection} />
+                <Stack.Screen name="Profile" component={Profile} />
+                <Stack.Screen name="Task Detail" component={DetailTask} />
+                <Stack.Screen name="Task Form" component={FillForm} />
+                <Stack.Screen name="Task Report" component={ReportTask} />
+                <Stack.Screen name="task" component={Task} />
+                <Stack.Screen name="DoneDetail" component={DoneDetail} />
+              </>
+            ) : (
+              <Stack.Screen name="login" component={Usersignin} />
+            )}
+            {/* <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="GenericTaskDetails" component={GenericTaskDetails} />
         <Stack.Screen name="task" component={Task} /> */}
-        </Stack.Navigator>
-      </SafeAreaProvider>
-    );
-    // }
+          </Stack.Navigator>
+        </SafeAreaProvider>
+      );
+    }
   }
 };
 

@@ -29,6 +29,7 @@ const App = () => {
     const token = await messaging().getToken();
     console.log('..............', token);
     getData('user').then(re => {
+      if (!re) return;
       db.collection('messagingToken').doc(re.name).set({token});
     });
   };

@@ -132,7 +132,7 @@ android {
 
     defaultConfig {
         
-        applicationId "com.cloudfos"
+        applicationId "com.fos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 46
