@@ -39,8 +39,8 @@ const DoneTask = ({nav, data, navigation}) => {
             //   a['Due date'].split('-').reverse().join('') -
             //     b['Due date'].split('-').reverse().join(''),
             // );
-            var nameA = a['Due date'].split('-').reverse().join('');
-            var nameB = b['Due date'].split('-').reverse().join('');
+            var nameA = a['Due date'].split('-').join('');
+            var nameB = b['Due date'].split('-').join('');
             if (nameA < nameB) {
               return -1;
             }
@@ -56,8 +56,8 @@ const DoneTask = ({nav, data, navigation}) => {
             //   a['Due date'].split('-').reverse().join('') -
             //     b['Due date'].split('-').reverse().join(''),
             // );
-            var nameA = a['Due date'].split('-').reverse().join('');
-            var nameB = b['Due date'].split('-').reverse().join('');
+            var nameA = a['Due date'].split('-').join('');
+            var nameB = b['Due date'].split('-').join('');
             if (nameA < nameB) {
               return 1;
             }
@@ -73,7 +73,7 @@ const DoneTask = ({nav, data, navigation}) => {
           item =>
             // item['Due date'].split('-').reverse().join('') < output &&
             // item['task status'] === 'todo',
-            item['Due date'].split('-').reverse().join('') <= todayDate &&
+            item['Due date'].split('-').join('') <= todayDate &&
             item['task status'] === 'done',
         ),
       );

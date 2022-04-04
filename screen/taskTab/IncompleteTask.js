@@ -43,8 +43,8 @@ const IncompleteTask = ({nav, data, navigation}) => {
     try {
       value
         ? task.sort((a, b) => {
-            var nameA = a['Due date'].split('-').reverse().join('');
-            var nameB = b['Due date'].split('-').reverse().join('');
+            var nameA = a['Due date'].split('-').join('');
+            var nameB = b['Due date'].split('-').join('');
             if (nameA < nameB) {
               return -1;
             }
@@ -56,8 +56,8 @@ const IncompleteTask = ({nav, data, navigation}) => {
             return 0;
           })
         : task.sort((a, b) => {
-            var nameA = a['Due date'].split('-').reverse().join('');
-            var nameB = b['Due date'].split('-').reverse().join('');
+            var nameA = a['Due date'].split('-').join('');
+            var nameB = b['Due date'].split('-').join('');
             if (nameA < nameB) {
               return 1;
             }
@@ -71,7 +71,7 @@ const IncompleteTask = ({nav, data, navigation}) => {
       setalign(
         task.filter(
           item =>
-            item['Due date'].split('-').reverse().join('') < todayDate &&
+            item['Due date'].split('-').join('') < todayDate &&
             item['task status'] === 'incomplete',
         ),
       );

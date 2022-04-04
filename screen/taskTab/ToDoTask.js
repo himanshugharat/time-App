@@ -56,9 +56,12 @@ const ToDoTask = ({nav, navigation}) => {
       setalign(
         task.filter(
           item =>
-            item['Due date'].split('-').reverse().join('') <= todayDate &&
-            item['Due date'].split('-').reverse().join('') >
-              moment('2021/07/25', 'YYYYMMDD').add(3, 'd').format('YYYYMMDD') &&
+            item['Due date'].split('-').join('') <= todayDate &&
+            item['Due date'].split('-').join('') >= 20220301 &&
+            // item['Due date'].split('-').reverse().join('') >
+            //   moment('2021/07/25').format('YYYYMMDD') &&
+            // item['Due date'].split('-').reverse().join('') >
+            //   moment('2021/07/25', 'YYYYMMDD').add(3, 'd').format('YYYYMMDD') &&
             item['task status'] === 'todo' &&
             item['Amount due'] > 0,
         ),
@@ -72,8 +75,8 @@ const ToDoTask = ({nav, navigation}) => {
       try {
         value
           ? task.sort((a, b) => {
-              var nameA = a['Due date'].split('-').reverse().join('');
-              var nameB = b['Due date'].split('-').reverse().join('');
+              var nameA = a['Due date'].split('-').join('');
+              var nameB = b['Due date'].split('-').join('');
               if (nameA < nameB) {
                 return -1;
               }
@@ -85,8 +88,8 @@ const ToDoTask = ({nav, navigation}) => {
               return 0;
             })
           : task.sort((a, b) => {
-              var nameA = a['Due date'].split('-').reverse().join('');
-              var nameB = b['Due date'].split('-').reverse().join('');
+              var nameA = a['Due date'].split('-').join('');
+              var nameB = b['Due date'].split('-').join('');
               if (nameA < nameB) {
                 return 1;
               }
@@ -97,16 +100,20 @@ const ToDoTask = ({nav, navigation}) => {
               // names must be equal
               return 0;
             });
+
         setalign(
           task.filter(
             item =>
-              item['Due date'].split('-').reverse().join('') <= todayDate &&
-              item['Due date'].split('-').reverse().join('') >
-                moment('2021/07/25', 'YYYYMMDD')
-                  .add(3, 'd')
-                  .format('YYYYMMDD') &&
-              item['task status'] === 'todo' &&
-              item['Amount due'] > 0,
+              item['Due date'].split('-').join('') <= todayDate &&
+              item['Due date'].split('-').join('') >= 20220301,
+            // item['Due date'].split('-').reverse().join('') > 27052021 &&
+            // // item['Due date'].split('-').reverse().join('') >
+            // //   moment('2021/07/25', 'YYYYMMDD')
+            // //     .add(3, 'd')
+            // //     .format('YYYYMMDD') &&
+            // item['task status'] === 'todo' &&
+            // item['Amount due'] > 0,
+            // console.log(item['Due date'].split('-').join('')),
           ),
         );
       } catch (err) {

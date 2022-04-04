@@ -83,6 +83,7 @@ const Home = ({navigation, route}) => {
           // console.log(item);
           // console.log('inner', item);
           setallTask(item);
+          console.log(item.length);
           // setloading(true);
           dispatch(getAllTask(item));
         })
